@@ -26,7 +26,7 @@ class Event extends Component {
                         <p key="phone">
                             <FontAwesomeIcon icon={["fas", "fa-map-pin"]} />
                             <span>
-                                {/*{this.props.event.coords.[long,lat]}*/}
+                                {this.props.event.venue}
                             </span>
                         </p>
                     </div>

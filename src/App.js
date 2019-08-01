@@ -1,37 +1,48 @@
+
+
 import React, {Component} from 'react';
 import Header from "./components/header/";
 import EventList from  "./components/eventList";
 import FilterControls from "./components/filterControls/";
-
 import './App.css';
 import Map from "./components/map/";
+require('dotenv').config();
+
 
 class App extends Component {
+
+
+
     render() {
+
+
+
         const sample = {
             name: {bride:'Joe', groom:'Jane'},
             date: '2019-08-08',
-            coords: {lat:'53.322425', lng:'-6.265859'},
+            venue: 'Kilshane House',
+            coords: {lat:53.322425, lng:-6.265859},
             picture: {thumbnail: './profile.png'}
         };
 
         const sample1 = {
             name: {bride:'Katie', groom:'Ivan'},
             date: '2019-08-04',
-            coords: {lat:'53.362425', lng:'-6.665859'},
+            coords: {lat:53.362425, lng:-6.665859},
             picture: {thumbnail: './profile.png'}
         };
 
         const sample2 = {
             name: {bride:'Steffi', groom:'Brian'},
             date: '2019-08-09',
-            coords: {lat:'53.462425', lng:'-7.665859'},
+            coords: {lat:53.462425, lng:-7.665859},
             picture: {thumbnail: './profile.png'}
         };
 
         const events = [sample, sample1, sample2, sample1, sample];
-
+        //const googleMapURL2 = `${process.env.REACT_APP_DEV_API_URL}`
         return (
+
             <div className="jumbotron">
                 <Header noEvents={10} />
                 <FilterControls />
@@ -39,7 +50,8 @@ class App extends Component {
 
             <Map
         isMarkerShown
-        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUr8H8fDlsbF3Bhm-AhsBOZkP-FzqcUE&v=3.exp&libraries=geometry,drawing,places"
+      // googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUr8H8fDlsbF3Bhm-AhsBOZkP-FzqcUE&v=3.exp&libraries=geometry,drawing,places"
+        googleMapURL={process.env.REACT_APP_DEV_API_URL}
         loadingElement={<div style={{ height: `80%` }} />}
         //location={sample.coords}
         containerElement={<div style={{ height: `400px` }} />}
@@ -52,15 +64,6 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
 
 
 // import logo from './logo.svg';
