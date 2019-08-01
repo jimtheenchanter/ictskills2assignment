@@ -43,6 +43,8 @@ class App extends Component {
         //const googleMapURL2 = `${process.env.REACT_APP_DEV_API_URL}`
         return (
 
+
+
             <div className="jumbotron">
                 <Header noEvents={10} />
                 <FilterControls />
@@ -50,7 +52,7 @@ class App extends Component {
 
             <Map
         isMarkerShown
-      // googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUr8H8fDlsbF3Bhm-AhsBOZkP-FzqcUE&v=3.exp&libraries=geometry,drawing,places"
+
         googleMapURL={process.env.REACT_APP_DEV_API_URL}
         loadingElement={<div style={{ height: `80%` }} />}
         //location={sample.coords}
