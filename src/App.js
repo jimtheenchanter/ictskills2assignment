@@ -5,41 +5,52 @@ import Header from "./components/header/";
 import EventList from  "./components/eventList";
 import FilterControls from "./components/filterControls/";
 import './App.css';
+import request from "superagent";
+import api from "./datastore/stubAPI";
 import Map from "./components/map/";
 require('dotenv').config();
 
 
 class App extends Component {
-
+    state = { search: "", gender: "all" };
+    componentDidMount() {
+        request.get("https://randomuser.me/api/?results=10").end((error, res) => {
+            if (res) {
+                let { results: events } = JSON.parse(res.text);
+                api.initialize(events);
+                this.setState({});
+            } else {
+                console.log(error);
+            }
+        });
+    }
 
 
     render() {
+        let events = api.getAll();
 
 
+        const location = {
+            lat:53.462425, lng:-7.665859
+         //   lng: events.location.longitude, lat:events.location.latitude
+        }
 
-        const sample = {
-            name: {bride:'Joe', groom:'Jane'},
-            date: '2019-08-08',
-            venue: 'Kilshane House',
-            coords: {lat:53.322425, lng:-6.265859},
-            picture: {thumbnail: './profile.png'}
-        };
 
-        const sample1 = {
-            name: {bride:'Katie', groom:'Ivan'},
-            date: '2019-08-04',
-            coords: {lat:53.362425, lng:-6.665859},
-            picture: {thumbnail: './profile.png'}
-        };
+        // const sample1 = {
+        //     name: {bride:'Katie', groom:'Ivan'},
+        //     date: '2019-08-04',
+        //     coords: {lat:53.362425, lng:-6.665859},
+        //     picture: {thumbnail: './profile.png'}
+        // };
+        //
+        // const sample2 = {
+        //     name: {bride:'Steffi', groom:'Brian'},
+        //     date: '2019-08-09',
+        //     coords: {lat:53.462425, lng:-7.665859},
+        //     picture: {thumbnail: './profile.png'}
+        // };
 
-        const sample2 = {
-            name: {bride:'Steffi', groom:'Brian'},
-            date: '2019-08-09',
-            coords: {lat:53.462425, lng:-7.665859},
-            picture: {thumbnail: './profile.png'}
-        };
-
-        const events = [sample, sample1, sample2, sample1, sample];
+        // const events = [sample, sample1, sample2, sample1, sample];
         //const googleMapURL2 = `${process.env.REACT_APP_DEV_API_URL}`
         return (
 
@@ -55,8 +66,9 @@ class App extends Component {
 
         googleMapURL={process.env.REACT_APP_DEV_API_URL}
         loadingElement={<div style={{ height: `80%` }} />}
-        //location={sample.coords}
-        location={sample.coords}
+        location={location}
+
+        // location={events.coordinates}
         containerElement={<div style={{ height: `400px` }} />}
         mapElement={<div style={{ height: `80%` }} />}
         />

@@ -10,23 +10,25 @@ class Event extends Component {
                 <div className="card">
                     <img
                         className="card-img-tag center "
-                        alt={this.props.event.name}
+                        alt={this.props.event.name.first}
                         src={this.props.event.picture.thumbnail}
                     />
                     <div className="card-body">
                         <h5 className="card-title ">
-                            {`${this.props.event.name.bride} ${
-                                this.props.event.name.groom
+                            {`${this.props.event.name.first} ${
+                                this.props.event.name.last
                                 }`}
                         </h5>
                         <p key="email">
                             <FontAwesomeIcon icon={["fas", "fa-calendar-week"]} />
-                            <span> {this.props.event.date}</span>
+                            Date of Event:
+                            <span> {this.props.event.dob.date}</span>
                         </p>
                         <p key="phone">
                             <FontAwesomeIcon icon={["fas", "fa-map-pin"]} />
-                            <span>
-                                {this.props.event.venue}
+                            <span>Coordinates
+                                {this.props.event.location.coordinates.longitude}
+                                {this.props.event.location.coordinates.latitude}
                             </span>
                         </p>
                     </div>
