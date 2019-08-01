@@ -54,6 +54,7 @@ class App extends Component {
         googleMapURL={process.env.REACT_APP_DEV_API_URL}
         loadingElement={<div style={{ height: `80%` }} />}
         //location={sample.coords}
+        location={sample.coords}
         containerElement={<div style={{ height: `400px` }} />}
         mapElement={<div style={{ height: `80%` }} />}
         />
