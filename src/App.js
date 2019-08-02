@@ -3,9 +3,10 @@
 import React, {Component} from 'react';
 import Header from "./components/header/";
 import EventList from  "./components/eventList";
+//import Event from "./components/event";
 import FilterControls from "./components/filterControls/";
 import './App.css';
-import request from "superagent";
+//import request from "superagent";
 import api from "./datastore/stubAPI";
 import Map from "./components/map/";
 require('dotenv').config();
@@ -13,17 +14,17 @@ require('dotenv').config();
 
 class App extends Component {
     state = { search: "", gender: "all" };
-    componentDidMount() {
-        request.get("https://randomuser.me/api/?results=10").end((error, res) => {
-            if (res) {
-                let { results: events } = JSON.parse(res.text);
-                api.initialize(events);
-                this.setState({});
-            } else {
-                console.log(error);
-            }
-        });
-    }
+    // componentDidMount() {
+    //     request.get("https://randomuser.me/api/?results=10").end((error, res) => {
+    //         if (res) {
+    //             let { results: events } = JSON.parse(res.text);
+    //             api.initialize(events);
+    //             this.setState({});
+    //         } else {
+    //             console.log(error);
+    //         }
+    //     });
+    // }
 
 
     render() {
@@ -31,8 +32,8 @@ class App extends Component {
 
 
         const location = {
-            lat:53.462425, lng:-7.665859
-         //   lng: events.location.longitude, lat:events.location.latitude
+          // lat: this.events.latitude, lng: this.events.longitude
+           lat: 54.8646, lng: -7.3136
         }
 
 
@@ -63,13 +64,10 @@ class App extends Component {
 
             <Map
         isMarkerShown
-
         googleMapURL={process.env.REACT_APP_DEV_API_URL}
         loadingElement={<div style={{ height: `80%` }} />}
         location={location}
-
-        // location={events.coordinates}
-        containerElement={<div style={{ height: `400px` }} />}
+        containerElement={<div style={{ height: `800px` }} />}
         mapElement={<div style={{ height: `80%` }} />}
         />
             </div>

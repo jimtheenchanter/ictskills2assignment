@@ -8,28 +8,38 @@ class Event extends Component {
         return (
             <div className="col-sm-3">
                 <div className="card">
-                    <img
-                        className="card-img-tag center "
-                        alt={this.props.event.name.first}
-                        src={this.props.event.picture.thumbnail}
+                    <img className="profile"
+                       // className="card-img-tag center "
+                        alt={this.props.event.venue}
+                        src={this.props.event.picture}
                     />
                     <div className="card-body">
-                        <h5 className="card-title ">
-                            {`${this.props.event.name.first} ${
-                                this.props.event.name.last
+                        <h4 className="card-title ">
+                            {`${this.props.event.bridename} + ${
+                                this.props.event.groomname
                                 }`}
-                        </h5>
+                        </h4>
                         <p key="email">
                             <FontAwesomeIcon icon={["fas", "fa-calendar-week"]} />
-                            Date of Event:
-                            <span> {this.props.event.dob.date}</span>
+                            Date: &nbsp;
+                            <span> {this.props.event.date}</span>
                         </p>
                         <p key="phone">
                             <FontAwesomeIcon icon={["fas", "fa-map-pin"]} />
-                            <span>Coordinates
-                                {this.props.event.location.coordinates.longitude}
-                                {this.props.event.location.coordinates.latitude}
+                            Lat: &nbsp;
+                            <span>
+                                {this.props.event.coordinates.latitude}
+
                             </span>
+
+                            <p key="phone">
+                                <FontAwesomeIcon icon={["fas", "fa-map-pin"]} />
+                                Long: &nbsp;
+                                <span>
+                                {/*{this.props.event.coordinates.latitude}*/}
+                                    {this.props.event.coordinates.longitude}
+                            </span>
+                            </p>
                         </p>
                     </div>
                     <div className="card-footer">
