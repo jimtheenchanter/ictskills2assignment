@@ -53,7 +53,7 @@ class StubAPI {
                 date: "2018-08-23",
                 mobile: "+3538695485912",
                 email: "katieandivan@hotmail.org",
-                picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1557750847/account-settings.png",
+                picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple2.jpg",
                 coordinates: {
                     latitude: "53.322786",
                     longitude: "-6.264836"
@@ -67,7 +67,7 @@ class StubAPI {
                 date: "2018-08-24",
                 mobile: "+3538695485912",
                 email: "katieandivan@hotmail.org",
-                picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1557750847/account-settings.png",
+                picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564740843/happycouple1.jpg",
                 coordinates: {
                     latitude: "52.925765",
                     longitude: "-8.180390"
@@ -81,7 +81,7 @@ class StubAPI {
                 date: "2018-08-31",
                 mobile: "+3538695485912",
                 email: "katieandivan@hotmail.org",
-                picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1557750847/account-settings.png",
+                picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple3.jpg",
                 coordinates: {
                     latitude: "53.288011",
                     longitude: "-6.235703"

@@ -25,12 +25,12 @@ class App extends Component {
                 <EventList events={events} />
 
             <Map
-        isMarkerShown
-        googleMapURL={process.env.REACT_APP_DEV_API_URL}
-        loadingElement={<div style={{ height: `80%` }} />}
-        containerElement={<div style={{ height: `800px` }} />}
-        mapElement={<div style={{ height: `80%` }} />}
-        >
+                isMarkerShown
+                googleMapURL={process.env.REACT_APP_DEV_API_URL}
+                loadingElement={<div style={{ height: `80%` }} />}
+                containerElement={<div style={{ height: `800px` }} />}
+                mapElement={<div style={{ height: `80%` }} />}
+                >
 
         </Map>
             </div>
