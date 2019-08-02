@@ -19,6 +19,10 @@ class Event extends Component {
                                 this.props.event.groomname
                                 }`}
                         </h4>
+                        <h5 className="venue-name ">
+                            {`${this.props.event.venue} 
+                                `}
+                        </h5>
                         <p key="email">
                             <FontAwesomeIcon icon={["fas", "fa-calendar-week"]} />
                             Date: &nbsp;

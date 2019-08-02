@@ -10,11 +10,17 @@ export default class FilterControls extends Component {
                         <h4>
                             <span>Filter </span>
                             <input type="text" placeholder="Name Search" />
-                            <span> Gender: </span>
+                            <span> Month </span>
                             <select id="gender">
                                 <option value="all">All</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
+                                <option value="january">January</option>
+                                <option value="february">February</option>
+                                <option value="march">March</option>
+                                <option value="april">April</option>
+                                <option value="may">may</option>
+                                <option value="june">june</option>
+                                <option value="july">july</option>
+                                <option value="august">august</option>
                             </select>
                         </h4>
                     </div>

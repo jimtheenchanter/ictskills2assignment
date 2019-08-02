@@ -1,5 +1,6 @@
 A map-based events management app where the user can save locations which are linked to cards describing the event. Date, customer, venue name etc.
 
+Multiple markers on map. Clicking
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
