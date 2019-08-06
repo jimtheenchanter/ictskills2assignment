@@ -4,6 +4,7 @@ import './eventList.css';
 
 export default class EventList extends Component {
     render() {
+        //iterates through event cards to display as a list
         const eventCards = this.props.events.map(e => (
             <Event key={e.date} event={e} />
         ));

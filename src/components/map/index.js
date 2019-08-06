@@ -3,20 +3,40 @@ import api from "../../datastore/stubAPI";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 
         const Map = withScriptjs(withGoogleMap((props) => {
-
+        //uses the stub api to populate events
                 const events = api.getAll();
+                // const informationWindow = new InfoWindow();
+
+        //display the event info on click
+            const onMarkerClick = (id) => {
+                const event = events.find(e => e.id === id);
+                console.log(event);
+                // informationWindow(event);
+                // var infowindow = new InfoWindow({
+                //     content: event
+                // });
+                // infowindow();
+
+
+
+            }
 
                 return <GoogleMap
+
                     defaultZoom={7}
-                    defaultCenter={{lat: 53.318388, lng: -7.680725}}
-                >
+                    defaultCenter={{lat: 53.318388, lng: -7.680725}}>
                     {events.map(e => (
                         <Marker
+                            key={e.id}
                             position={{
                                 lat: parseFloat(e.coordinates.latitude),
                                 lng: parseFloat(e.coordinates.longitude)
                             }}
-                            onClick={(e) => console.log(e)}
+                            onClick={() => onMarkerClick(e.id)
+
+
+
+                            }
                         />
 
                     ))}

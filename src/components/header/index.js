@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import logo from '../../logo.svg';
+import './header.css';
 class Header extends Component {
     render() {
         return (
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-6 offset-4">
-                        <div className="page-header">
+                        <div className="App-header-header">
+                         <div className={"App-logo"}>
                             <img src={logo} className="App-logo" alt="logo" />
+                        </div>
                             <h1>
                                 Event List <span className="badge badge-pill badge-success">{this.props.noEvents}</span>
                             </h1>
