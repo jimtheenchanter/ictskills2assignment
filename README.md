@@ -1,19 +1,33 @@
-A map-based events management app where the user can save locations which are linked to cards describing the event. Date, customer, venue name etc.
 
-Multiple markers on map. Clicking
+#ICT Skills 2 Assignment  -Single Page App
+
+Name        James O'Brien
+Student no. 20082197    
+Git repo    https://github.com/jimtheenchanter/ictskills2assignment.git
+
+##Overview
+A map-based events management app where the user can save locations which are linked to cards describing the event. Date, customer, venue name etc.
+ > Features
+    Multiple event markers on map. 
+    Clicking displays event data to the console.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+##Setup
+Git clone from 
+####https://github.com/jimtheenchanter/ictskills2assignment.git
 
-In the project directory, you can run:
-
+From console enter:
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+or for <strong>Storybook mode </strong> enter:
+### `npx start-storybook -p 9001 -c .storybook`
+
 The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+You will also see any lint errors(!) in the console.
 
 ### `npm test`
 

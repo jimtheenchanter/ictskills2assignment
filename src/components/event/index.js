@@ -24,12 +24,12 @@ class Event extends Component {
                                 `}
                         </h5>
                         <p key="email">
-                            <FontAwesomeIcon icon={["fas", "fa-calendar-week"]} />
+                            {/*<FontAwesomeIcon icon={["fas", "fa-calendar-week"]} />*/}
                             Date: &nbsp;
                             <span> {this.props.event.date}</span>
                         </p>
                         <p key="phone">
-                            <FontAwesomeIcon icon={["fas", "fa-map-pin"]} />
+                            {/*<FontAwesomeIcon icon={["fas", "fa-map-pin"]} />*/}
                             Lat: &nbsp;
                             <span>
                                 {this.props.event.coordinates.latitude}
@@ -37,10 +37,10 @@ class Event extends Component {
                             </span>
 
                             <p key="phone">
-                                <FontAwesomeIcon icon={["fas", "fa-map-pin"]} />
+                                {/*<FontAwesomeIcon icon={["fas", "fa-map-pin"]} />*/}
                                 Long: &nbsp;
                                 <span>
-                                {/*{this.props.event.coordinates.latitude}*/}
+
                                     {this.props.event.coordinates.longitude}
                             </span>
                             </p>

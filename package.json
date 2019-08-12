@@ -11,14 +11,12 @@
     "core-js": "^3.1.4",
     "dotenv": "^8.0.0",
     "font-awesome": "^4.7.0",
-    "gh-pages": "^2.1.0",
     "google-maps-react": "^2.0.2",
     "lodash": "^4.17.15",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-google-maps": "^9.4.5",
-    "react-scripts": "3.0.1",
-    "superagent": "^5.1.0"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -48,6 +46,7 @@
     "@babel/core": "^7.5.5",
     "@fortawesome/fontawesome-free": "^5.10.1",
     "@storybook/react": "^5.1.10",
+    "gh-pages": "^2.0.1",
     "react-dev-utils": "^9.0.1"
   }
 }

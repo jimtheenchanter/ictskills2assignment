@@ -17,6 +17,7 @@ class App extends Component {
 
     render() {
         let events = api.getAll();
+        //displays current number of events
         let eventsnumber = events.length;
 
         return (
