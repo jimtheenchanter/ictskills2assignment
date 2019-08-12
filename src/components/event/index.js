@@ -1,13 +1,42 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./event.css";
 import "../../fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import buttons from "../../config/buttonsConfig";
 
 class Event extends Component {
+    state = {
+        status: "",
+        email: this.props.event.email,
+        mobile: this.props.event.mobile,
+        previousDetails: {
+            email: this.props.event.email,
+            mobile: this.props.event.mobile
+        }
+    };
+    handleEdit = () => this.setState({ status: "edit" });
+    handleCancel = () => {
+        let { email, mobile } = this.state.previousDetails;
+        this.setState({ status: "", email, mobile });
+    };
+    handleEmailChange = e => this.setState({ email: e.target.value });
+    handlePhoneChange = e => this.setState({ mobile: e.target.value });
+
+
     render() {
+        let activeButtons = buttons.normal;
+        let leftButtonHandler = this.handleEdit;
+        let rightButtonHandler = this.handleDelete;
+        let cardColor = "bg-white";
+        if (this.state.status === "edit") {
+            cardColor = "bg-primary";
+            activeButtons = buttons.edit;
+            leftButtonHandler = this.handleSave;
+            rightButtonHandler = this.handleCancel;
+        }
         return (
             <div className="col-sm-3">
-                <div className="card">
+                <div className={`card  ${cardColor}`}>
                     <img className="profile"
                        // className="card-img-tag center "
                         alt={this.props.event.venue}
@@ -19,49 +48,103 @@ class Event extends Component {
                                 this.props.event.groomname
                                 }`}
                         </h4>
+
                         <h5 className="venue-name ">
                             {`${this.props.event.venue} 
                                 `}
                         </h5>
-                        <p key="email">
-                            {/*<FontAwesomeIcon icon={["fas", "fa-calendar-week"]} />*/}
-                            Date: &nbsp;
-                            <span> {this.props.event.date}</span>
-                        </p>
-                        <p key="phone">
-                            {/*<FontAwesomeIcon icon={["fas", "fa-map-pin"]} />*/}
-                            Lat: &nbsp;
-                            <span>
-                                {this.props.event.coordinates.latitude}
 
-                            </span>
+                        {this.state.status === "edit" ? (
+                            <Fragment>
+                                <p>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        value={this.state.email}
+                                        onChange={this.handleEmailChange}
+                                    />
+                                </p>
+                                <p>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        value={this.state.mobile}
+                                        onChange={this.handlePhoneChange}
+                                    />
+                                </p>
+                            </Fragment>
+                        ) :
+                            (
+                            <Fragment>
+                                <p>
+                                    <FontAwesomeIcon icon={["fas", "envelope"]} />
+                                    <span> {this.props.event.email}</span>
+                                </p>
+                                <p>
+                                    <FontAwesomeIcon icon={["fas", "phone"]} />
+                                    <span> {this.props.event.mobile} </span>
+                                </p>
+                            </Fragment>
+                        )}
 
-                            <p key="phone">
-                                {/*<FontAwesomeIcon icon={["fas", "fa-map-pin"]} />*/}
-                                Long: &nbsp;
-                                <span>
-
-                                    {this.props.event.coordinates.longitude}
-                            </span>
-                            </p>
-                        </p>
                     </div>
+
+
+
+                        {/*<p key="email">*/}
+                        {/*    /!*<FontAwesomeIcon icon={["fas", "fa-calendar-week"]} />*!/*/}
+                        {/*    Date: &nbsp;*/}
+                        {/*    <span> {this.props.event.date}</span>*/}
+                        {/*</p>*/}
+                        {/*<p key="phone">*/}
+                        {/*    /!*<FontAwesomeIcon icon={["fas", "fa-map-pin"]} />*!/*/}
+                        {/*    Lat: &nbsp;*/}
+                        {/*    <span>*/}
+                        {/*        {this.props.event.coordinates.latitude}*/}
+
+                        {/*    </span>*/}
+
+                        {/*    <p key="phone">*/}
+                        {/*        /!*<FontAwesomeIcon icon={["fas", "fa-map-pin"]} />*!/*/}
+                        {/*        Long: &nbsp;*/}
+                        {/*        <span>*/}
+
+                        {/*            {this.props.event.coordinates.longitude}*/}
+                        {/*    </span>*/}
+                        {/*    </p>*/}
+                        {/*</p>*/}
+
+
                     <div className="card-footer">
                         <div
                             className="btn-group d-flex btn-group-justified"
                             role="group"
                             aria-label="..."
                         >
-                            <button type="button" className={"btn btn-default w-100"}>
-                                {" Edit "}
+                            <button
+                                type="button"
+                                className={"btn w-100 " + activeButtons.leftButtonColor}
+                                onClick={leftButtonHandler}
+                            >
+                                {activeButtons.leftButtonVal}
                             </button>
-                            <button type="button" className={"btn btn-danger w-100"}>
-                                {"Delete"}
+                            <button
+                                type="button"
+                                className={"btn w-100 " + activeButtons.rightButtonColor}
+                                onClick={rightButtonHandler}
+                            >
+                                {activeButtons.rightButtonVal}
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
         );
     }
 }

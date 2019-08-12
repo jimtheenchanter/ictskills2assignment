@@ -23,6 +23,7 @@ class StubAPI {
                 groomname: "Brian",
                 venue: "Dromquinna Manor",
                 date: "2018-08-09",
+                month: "august",
                 mobile: "+3538695485912",
                 email: "katieandivan@hotmail.org",
                 picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple3.jpg",
