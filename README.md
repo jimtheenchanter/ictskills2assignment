@@ -4,12 +4,15 @@
 Name        James O'Brien
 Student no. 20082197    
 Git repo    https://github.com/jimtheenchanter/ictskills2assignment.git
+Heroku:     https://djeventmanager.herokuapp.com
 
 ##Overview
-A map-based events management app where the user can save locations which are linked to cards describing the event. Date, customer, venue name etc.
+A map-based events management app where the user can save event locations and details
+ which are linked to cards describing the event. Date, customer, venue name etc.
  > Features
     Multiple event markers on map. 
-    Clicking displays event data to the console.
+    Clicking markers displays event data to the console.
+    Can edit or delete events
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ##Setup

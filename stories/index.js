@@ -11,6 +11,8 @@ import FilterControls from '../src/components/filterControls/';
 import Event from '../src/components/event/';
 import EventList from '../src/components/eventList/'
 
+import PublicProfile from '../src/components/contactPublic/publicProfile'
+
 const sample = {
     id: 1,
     bridename: "Katie",
@@ -24,23 +26,23 @@ const sample = {
         latitude: "54.8646",
         longitude: "-7.3136"
     }
-        // ,
-    // login: {
-    //     uuid: "c4168eac-84b8-46ea-b735-c9da9bfb97fd",
-    //     username: "bluefrog786",
-    //     password: "ingrid",
-    //     salt: "GtRFz4NE",
-    //     md5: "5c581c5748fc8c35bd7f16eac9efbb55",
-    //     sha1: "c3feb8887abed9ec1561b9aa2c9f58de21d1d3d9",
-    //     sha256: "684c478a98b43f1ef1703b35b8bbf61b27dbc93d52acd515e141e97e04447712"
-    // },
-    // dob: {
-    //     date: "1975-11-12T06:34:44Z",
-    //     age: 42
-    // }, registered: {
-    //     date: "2015-11-04T22:09:36Z",
-    //     age: 2
-    // },
+        ,
+    login: {
+        uuid: "c4168eac-84b8-46ea-b735-c9da9bfb97fd",
+        username: "bluefrog786",
+        password: "ingrid",
+        salt: "GtRFz4NE",
+        md5: "5c581c5748fc8c35bd7f16eac9efbb55",
+        sha1: "c3feb8887abed9ec1561b9aa2c9f58de21d1d3d9",
+        sha256: "684c478a98b43f1ef1703b35b8bbf61b27dbc93d52acd515e141e97e04447712"
+    },
+    dob: {
+        date: "1975-11-12T06:34:44Z",
+        age: 42
+    }, registered: {
+        date: "2015-11-04T22:09:36Z",
+        age: 2
+    },
 };
 
 // const sample1 =  {id: 2,
@@ -105,7 +107,10 @@ storiesOf("Event List App/Event List", module)
         return <EventList events={samples}/>
     });
 
-
+storiesOf("Contact List App/Contact Page/PublicProfile", module)
+    .add("default", () => (
+        <PublicProfile user={sample}/>
+    ));
 // storiesOf("Event List App/Event List", module).add("default", () => {
 //     const samples = [sample, sample1, sample2, sample, sample1]
 //     return <EventList events={samples} deleteHandler={action('Delete confirmed') }/>
