@@ -24,7 +24,7 @@ class StubAPI {
                 venue: "Dromquinna Manor",
                 date: "2018-08-09",
                 month: "august",
-                mobile: "+3538695485912",
+                mobile: "+3538695485914",
                 email: "katieandivan@hotmail.org",
                 picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple3.jpg",
                 coordinates: {
@@ -38,7 +38,7 @@ class StubAPI {
                 groomname: "James",
                 venue: "Hay Barn",
                 date: "2018-08-17",
-                mobile: "+3538695485912",
+                mobile: "+3538695485915",
                 email: "katieandivan@hotmail.org",
                 picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple2.jpg",
                 coordinates: {
@@ -52,7 +52,7 @@ class StubAPI {
                 groomname: "Jimmy",
                 venue: "Fallon and Byrne",
                 date: "2018-08-23",
-                mobile: "+3538695485912",
+                mobile: "+3538695485916",
                 email: "katieandivan@hotmail.org",
                 picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple2.jpg",
                 coordinates: {
@@ -66,7 +66,7 @@ class StubAPI {
                 groomname: "Matt",
                 venue: "Ashley Park House",
                 date: "2018-08-24",
-                mobile: "+3538695485912",
+                mobile: "+3538695485917",
                 email: "katieandivan@hotmail.org",
                 picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564740843/happycouple1.jpg",
                 coordinates: {
@@ -80,7 +80,7 @@ class StubAPI {
                 groomname: "Colm",
                 venue: "Airfield Estate",
                 date: "2018-08-31",
-                mobile: "+3538695485912",
+                mobile: "+3538695485918",
                 email: "katieandivan@hotmail.org",
                 picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple3.jpg",
                 coordinates: {
@@ -94,7 +94,7 @@ class StubAPI {
                 groomname: "Scott",
                 venue: "Ballintaggart House",
                 date: "2018-09-07",
-                mobile: "+3538695485912",
+                mobile: "+3538695485919",
                 email: "katieandivan@hotmail.org",
                 picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1557750847/account-settings.png",
                 coordinates: {
@@ -111,7 +111,7 @@ class StubAPI {
     find(id) {
         let index = _.findIndex(
             this.events,
-            event => `${event.phone}${event.cell}` === id
+            event => `${event.mobile}${event.date}` === id
         );
         if (index !== -1) {
             return this.events[index];
@@ -120,7 +120,7 @@ class StubAPI {
     }
 
     delete(k) {
-        let elements = _.remove(this.events, event => event.phone === k);
+        let elements = _.remove(this.events, event => event.mobile === k);
         return elements;
     }
 
@@ -132,10 +132,10 @@ class StubAPI {
         return this.events;
     }
 
-    update(key, email, phone) {
-        let index = _.findIndex(this.events, event => event.phone === key);
+    update(key, email, mobile) {
+        let index = _.findIndex(this.events, event => event.mobile === key);
         if (index !== -1) {
-            this.events[index].phone = phone;
+            this.events[index].mobile = mobile;
             this.events[index].email = email;
             return true;
         }

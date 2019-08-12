@@ -1,11 +1,12 @@
 
-import React, {Component} from 'react';
+//this component coordinates the logic of all the other components
+import React, {Component, Fragment} from 'react';
 import Header from "./components/header/";
 import EventList from  "./components/eventList";
 //import Event from "./components/event";
 import FilterControls from "./components/filterControls/";
 import './App.css';
-import request from "superagent";
+// import request from "superagent";
 import api from "./datastore/stubAPI";
 import Map from "./components/map/";
 require('dotenv').config();
@@ -13,18 +14,21 @@ require('dotenv').config();
 
 class App extends Component {
     state = { search: "", month: "all" };
-    componentDidMount() {
-        request.get(api).end((error, res) => {
-            if (res) {
-                let {results: events} = JSON.parse(res.text);
-                api.initialize(events);
-                this.setState({});
-            } else {
-                console.log(error);
-            }
-        })
+    // componentDidMount() {
+    //     request.get(api).end((error, res) => {
+    //         if (res) {
+    //             let {results: events} = JSON.parse(res.text);
+    //             api.initialize(events);
+    //             this.setState({});
+    //         } else {
+    //             console.log(error);
+    //         }
+    //     })
+    // };
+    deleteEvent = (key) => {
+        api.delete(key);
+        this.setState({});
     };
-
 
     render() {
         let events = api.getAll();
@@ -33,7 +37,8 @@ class App extends Component {
 
         return (
 
-            <div className="jumbotron">
+
+            <Fragment>
                 <Header noEvents={events.length} />
                 <Map
                     isMarkerShown
@@ -44,11 +49,12 @@ class App extends Component {
                 >
 
                 </Map>
-                <FilterControls />
-                <EventList events={events} />
+                <FilterControls onUserInput={this.handleChange} />
+                <EventList events={events}
+                           deleteHandler={this.deleteEvent}/>
 
+            </Fragment>
 
-            </div>
 
     );
    }

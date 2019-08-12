@@ -17,10 +17,10 @@ export default class FilterControls extends Component {
                                 <option value="february">February</option>
                                 <option value="march">March</option>
                                 <option value="april">April</option>
-                                <option value="may">may</option>
-                                <option value="june">june</option>
-                                <option value="july">july</option>
-                                <option value="august">august</option>
+                                <option value="may">May</option>
+                                <option value="june">June</option>
+                                <option value="july">July</option>
+                                <option value="august">August</option>
                             </select>
                         </h4>
                     </div>

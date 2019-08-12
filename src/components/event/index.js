@@ -4,6 +4,8 @@ import "../../fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import buttons from "../../config/buttonsConfig";
 import api from "../../datastore/stubAPI";
+import { Link } from "react-router-dom";
+// import {faMapPin} from "@fortawesome/free-solid-svg-icons";
 
 class Event extends Component {
     state = {
@@ -15,6 +17,8 @@ class Event extends Component {
             mobile: this.props.event.mobile
         }
     };
+
+    //invokes the following functions when required
     handleEdit = () => this.setState({ status: "edit" });
     handleSave = e => {
         e.preventDefault();
@@ -33,7 +37,11 @@ class Event extends Component {
     };
     handleEmailChange = e => this.setState({ email: e.target.value });
     handlePhoneChange = e => this.setState({ mobile: e.target.value });
-
+    handleDelete = () =>  this.setState({ status : 'del'} );
+    handleConfirm = (e) => {
+        e.preventDefault();
+        this.props.deleteHandler(this.state.mobile);
+    };
 
     render() {
         let activeButtons = buttons.normal;
@@ -45,15 +53,24 @@ class Event extends Component {
             activeButtons = buttons.edit;
             leftButtonHandler = this.handleSave;
             rightButtonHandler = this.handleCancel;
+        }else if (this.state.status === 'del' ) {
+            cardColor = "bg-warning";
+            activeButtons = buttons.delete;
+            leftButtonHandler = this.handleCancel;
+            rightButtonHandler = this.handleConfirm;
         }
         return (
             <div className="col-sm-3">
                 <div className={`card  ${cardColor}`}>
+                    <Link
+                        to={`/events/${this.props.event.mobile}${this.props.event.email}`}
+                    >
                     <img className="profile"
                        // className="card-img-tag center "
                         alt={this.props.event.venue}
                         src={this.props.event.picture}
                     />
+                    </Link>
                     <div className="card-body">
                         <h4 className="card-title ">
                             {`${this.props.event.bridename} + ${
@@ -95,6 +112,14 @@ class Event extends Component {
                                 <p>
                                     <FontAwesomeIcon icon={["fas", "phone"]} />
                                     <span> {this.props.event.mobile} </span>
+                                </p> <p>
+                               Longitude: &nbsp;
+                                <span> {this.props.event.coordinates.longitude}</span>
+                            </p>
+                                <p>
+                                    Latitude: &nbsp;
+
+                                    <span> {this.props.event.coordinates.latitude} </span>
                                 </p>
                             </Fragment>
                         )}
@@ -103,28 +128,7 @@ class Event extends Component {
 
 
 
-                        {/*<p key="email">*/}
-                        {/*    /!*<FontAwesomeIcon icon={["fas", "fa-calendar-week"]} />*!/*/}
-                        {/*    Date: &nbsp;*/}
-                        {/*    <span> {this.props.event.date}</span>*/}
-                        {/*</p>*/}
-                        {/*<p key="phone">*/}
-                        {/*    /!*<FontAwesomeIcon icon={["fas", "fa-map-pin"]} />*!/*/}
-                        {/*    Lat: &nbsp;*/}
-                        {/*    <span>*/}
-                        {/*        {this.props.event.coordinates.latitude}*/}
 
-                        {/*    </span>*/}
-
-                        {/*    <p key="phone">*/}
-                        {/*        /!*<FontAwesomeIcon icon={["fas", "fa-map-pin"]} />*!/*/}
-                        {/*        Long: &nbsp;*/}
-                        {/*        <span>*/}
-
-                        {/*            {this.props.event.coordinates.longitude}*/}
-                        {/*    </span>*/}
-                        {/*    </p>*/}
-                        {/*</p>*/}
 
 
                     <div className="card-footer">
