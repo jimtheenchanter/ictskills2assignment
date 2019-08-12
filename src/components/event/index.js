@@ -3,6 +3,7 @@ import "./event.css";
 import "../../fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import buttons from "../../config/buttonsConfig";
+import api from "../../datastore/stubAPI";
 
 class Event extends Component {
     state = {
@@ -15,7 +16,18 @@ class Event extends Component {
         }
     };
     handleEdit = () => this.setState({ status: "edit" });
-    handleCancel = () => {
+    handleSave = e => {
+        e.preventDefault();
+        let updatedEmail = this.state.email.trim();
+        let updatedPhone = this.state.mobile.trim();
+        if (!updatedEmail || !updatedPhone) {
+            return;
+        }
+        let { email, mobile } = this.state;
+        this.setState({ status: "", previousDetails: { email, mobile } });
+        api.update(this.state.previousDetails.mobile, updatedEmail, updatedPhone);
+    };
+    handleCancel = (e) => {
         let { email, mobile } = this.state.previousDetails;
         this.setState({ status: "", email, mobile });
     };
