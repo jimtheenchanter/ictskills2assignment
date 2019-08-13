@@ -17,8 +17,8 @@ class Router extends Component {
             } else {
                 console.log(error);
             }
-        })
-    };
+        });
+    }
 
 
     render() {
@@ -38,20 +38,5 @@ class Router extends Component {
     }
 }
 
-ReactDOM.render(<Router />, document.getElementById("root"));// import React from 'react';
+ReactDOM.render(<Router />, document.getElementById("root"));
 
-
-
-
-
-// import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-// //Bootstrap for styling
-// import "../node_modules/bootstrap/dist/css/bootstrap.css";
-//
-// //attaches the App component to the browser's DOM at the element with the ID 'root'
-// ReactDOM.render(<App />, document.getElementById('root'));
-//
-//
-//

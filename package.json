@@ -9,6 +9,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "bootstrap": "^4.3.1",
     "core-js": "^3.1.4",
+    "cypress": "^3.4.1",
     "dotenv": "^8.0.0",
     "font-awesome": "^4.7.0",
     "google-maps-react": "^2.0.2",
@@ -16,6 +17,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-google-maps": "^9.4.5",
+    "react-responsive-modal": "^4.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "superagent": "^5.1.0"

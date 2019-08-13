@@ -16,22 +16,22 @@ class StubAPI {
                     latitude: "54.8646",
                     longitude: "-7.3136"
                     },
-                login: {
-                    uuid: "c4168eac-84b8-46ea-b735-c9da9bfb97fd",
-                    username: "bluefrog786",
-                    password: "ingrid",
-                    salt: "GtRFz4NE",
-                    md5: "5c581c5748fc8c35bd7f16eac9efbb55",
-                    sha1: "c3feb8887abed9ec1561b9aa2c9f58de21d1d3d9",
-                    sha256: "684c478a98b43f1ef1703b35b8bbf61b27dbc93d52acd515e141e97e04447712"
-                },
-                dob: {
-                    date: "1975-11-12T06:34:44Z",
-                    age: 42
-                }, registered: {
-                    date: "2015-11-04T22:09:36Z",
-                    age: 2
-                },
+                // login: {
+                //     uuid: "c4168eac-84b8-46ea-b735-c9da9bfb97fd",
+                //     username: "bluefrog786",
+                //     password: "ingrid",
+                //     salt: "GtRFz4NE",
+                //     md5: "5c581c5748fc8c35bd7f16eac9efbb55",
+                //     sha1: "c3feb8887abed9ec1561b9aa2c9f58de21d1d3d9",
+                //     sha256: "684c478a98b43f1ef1703b35b8bbf61b27dbc93d52acd515e141e97e04447712"
+                // },
+                // dob: {
+                //     date: "1975-11-12T06:34:44Z",
+                //     age: 42
+                // }, registered: {
+                //     date: "2015-11-04T22:09:36Z",
+                //     age: 2
+                // },
             },
             {
                 id: 2,
@@ -58,8 +58,8 @@ class StubAPI {
                 email: "katieandivan@hotmail.org",
                 picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple2.jpg",
                 coordinates: {
-                    latitude: "53.264203",
-                    longitude: "-7.518304"
+                    latitude: "53.270350",
+                    longitude: "-7.430745"
                 }
             },
             {

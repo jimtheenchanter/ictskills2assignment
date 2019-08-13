@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import buttons from "../../config/buttonsConfig";
 import api from "../../datastore/stubAPI";
 import { Link } from "react-router-dom";
-// import {faMapPin} from "@fortawesome/free-solid-svg-icons";
 
 class Event extends Component {
     state = {
@@ -29,6 +28,7 @@ class Event extends Component {
         }
         let { email, mobile } = this.state;
         this.setState({ status: "", previousDetails: { email, mobile } });
+        //update the api stub
         api.update(this.state.previousDetails.mobile, updatedEmail, updatedPhone);
     };
     handleCancel = (e) => {
@@ -44,6 +44,11 @@ class Event extends Component {
     };
 
     render() {
+        //check that there are events to show
+        if (!this.props.event) {
+            return null;
+        }
+
         let activeButtons = buttons.normal;
         let leftButtonHandler = this.handleEdit;
         let rightButtonHandler = this.handleDelete;
@@ -60,13 +65,14 @@ class Event extends Component {
             rightButtonHandler = this.handleConfirm;
         }
         return (
-            <div className="col-sm-3">
+
+            <div className={this.props.className}>
                 <div className={`card  ${cardColor}`}>
                     <Link
                         to={`/events/${this.props.event.mobile}${this.props.event.email}`}
                     >
-                    <img className="profile"
-                       // className="card-img-tag center "
+                    <img
+                        className="profile"
                         alt={this.props.event.venue}
                         src={this.props.event.picture}
                     />
@@ -79,8 +85,7 @@ class Event extends Component {
                         </h4>
 
                         <h5 className="venue-name ">
-                            {`${this.props.event.venue} 
-                                `}
+                            {`${this.props.event.venue} `}
                         </h5>
 
                         {this.state.status === "edit" ? (

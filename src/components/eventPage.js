@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter} from "react-router-dom";
 import api from "../datastore/stubAPI"; // NEW
-// import ContactPublic from "../components/contactPublic/";
+import EventPublic from "../components/eventPublic/";
 // import ContactPrivate from "../components/contactPrivate/";
 
 const EventPage = props => {
@@ -11,8 +11,7 @@ const EventPage = props => {
         <Fragment>
             {event ? (
                 <Fragment>
-            <h3> Event id: {props.match.params.id} </h3>
-            <h3> Detail page stub </h3>
+                    <EventPublic user={event} />
                 </Fragment>
             ):(
                     <p>Waiting for event details</p>

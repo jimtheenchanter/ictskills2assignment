@@ -5,24 +5,17 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
         const Map = withScriptjs(withGoogleMap((props) => {
         //uses the stub api to populate events
                 const events = api.getAll();
-                // const informationWindow = new InfoWindow();
+               // const informationWindow = new InfoWindow();
 
         //display the event info on click
             const onMarkerClick = (id) => {
                 const event = events.find(e => e.id === id);
-                console.log(event);
-                // informationWindow(event);
-                // var infowindow = new InfoWindow({
-                //     content: event
-                // });
-                // infowindow();
-
-
+                props.openModal(event);
+                // console.log(event);
 
             }
 
                 return <GoogleMap
-
                     defaultZoom={7}
                     defaultCenter={{lat: 53.318388, lng: -7.680725}}>
                     {events.map(e => (
@@ -32,11 +25,8 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
                                 lat: parseFloat(e.coordinates.latitude),
                                 lng: parseFloat(e.coordinates.longitude)
                             }}
-                            onClick={() => onMarkerClick(e.id)
-
-
-
-                            }
+                            onClick={() => onMarkerClick(e.id)}
+                            title={`${e.bridename} & ${e.groomname}, ${e.venue}`}
                         />
 
                     ))}

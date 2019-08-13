@@ -2,12 +2,12 @@ import React, { Fragment } from "react";
 import { capitalize } from "../../util";
 import "../../fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./contactPublic.css";
+import "./eventPublic.css";
 import { Link } from "react-router-dom";
 import PublicProfile from "../eventPublic/publicProfile"
 
 export default ({ user }) => {
-    const name = capitalize(`${user.name.first} ${user.name.last}`);
+    const name = capitalize(`${this.props.event.bridename} " " ${this.props.event.groomname}`);
     return (
         <Fragment>
             <div className="row">
@@ -23,7 +23,7 @@ export default ({ user }) => {
             </div>
             <div className="row">
                 <div className="col-3">
-                    <img src={user.picture.large} className="contact" alt={name} />
+                    <img src={this.props.event.picture} className="contact" alt={name} />
                 </div>
                 <div className="col-4">
                     <PublicProfile user={user} />

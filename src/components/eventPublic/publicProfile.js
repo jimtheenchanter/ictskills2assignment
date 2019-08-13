@@ -4,16 +4,16 @@ import "../../fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default ({ user }) => {
-    const address = capitalize(
-        `${user.location.street}, ${user.location.city}, ${user.location.state}`
+    const venue = capitalize(
+        `${this.props.event.venue}, ${this.props.event.coordinates.latitude}, ${this.props.event.coordinates.longitude}`
     );
-    const dob = user.dob.date.split("-");
-    const birthdate = `${dob[2].substr(0, 2)}/${dob[1]}/${dob[0]}  `;
+    // const dob = user.dob.date.split("-");
+    // const birthdate = `${dob[2].substr(0, 2)}/${dob[1]}/${dob[0]}  `;
     return (
         <Fragment>
             <h4>
                 <FontAwesomeIcon icon={["fas", "home"]} />
-                <span> {address}</span>
+                <span> {venue}</span>
             </h4>
             <h4>
                 <FontAwesomeIcon icon={["fas", "phone"]} />
@@ -25,7 +25,7 @@ export default ({ user }) => {
             </h4>
             <h4>
                 <FontAwesomeIcon icon={["fas", "birthday-cake"]} />
-                <span> {birthdate}</span>
+                <span> {this.props.event.date}</span>
             </h4>
         </Fragment>
     );

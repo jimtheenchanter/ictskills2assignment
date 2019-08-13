@@ -7,13 +7,14 @@ class Header extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-6 offset-4">
-                        <div className="App-header-header">
+                        <div className="App-header">
                          <div className={"App-logo"}>
                             <img src={logo} className="App-logo" alt="logo" />
                         </div>
                             <h1>
-                                Event List <span className="badge badge-pill badge-success">{this.props.noEvents}</span>
+                                Interactive Event Map
                             </h1>
+                            <span className="badge badge-pill badge-success">{this.props.noEvents}</span>
                         </div>
                     </div>
                 </div>

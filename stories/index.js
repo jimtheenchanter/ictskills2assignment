@@ -11,7 +11,7 @@ import FilterControls from '../src/components/filterControls/';
 import Event from '../src/components/event/';
 import EventList from '../src/components/eventList/'
 
-import PublicProfile from '../src/components/contactPublic/publicProfile'
+import PublicProfile from '../src/components/eventPublic/publicProfile'
 
 const sample = {
     id: 1,
@@ -107,7 +107,7 @@ storiesOf("Event List App/Event List", module)
         return <EventList events={samples}/>
     });
 
-storiesOf("Contact List App/Contact Page/PublicProfile", module)
+storiesOf("Event List App/Event Page/PublicProfile", module)
     .add("default", () => (
         <PublicProfile user={sample}/>
     ));
