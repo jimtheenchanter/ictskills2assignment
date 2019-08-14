@@ -78,14 +78,33 @@ class Event extends Component {
                     />
                     </Link>
                     <div className="card-body">
-                        <h4 className="card-title ">
+
+                        <h2 className="card-title ">
+
                             {`${this.props.event.bridename} + ${
                                 this.props.event.groomname
                                 }`}
-                        </h4>
+                        </h2>
+                        <p>
+                            <address>
+                                <a href="mailto:#">
+                                    <FontAwesomeIcon icon={["fas", "envelope"]}/>
+                                    <span> {this.props.event.email}</span>
+                                </a>
+                                <address>
+                                </address>
 
+                                <FontAwesomeIcon icon={["fas", "phone"]} />
+                                <span> {this.props.event.mobile} </span>
+                            </address>
+                        </p>
+                        <h4 className="date-name ">
+                            {`${this.props.event.date} `}
+
+                        </h4>
                         <h5 className="venue-name ">
                             {`${this.props.event.venue} `}
+
                         </h5>
 
                         {this.state.status === "edit" ? (
@@ -110,22 +129,20 @@ class Event extends Component {
                         ) :
                             (
                             <Fragment>
-                                <p>
-                                    <FontAwesomeIcon icon={["fas", "envelope"]} />
-                                    <span> {this.props.event.email}</span>
-                                </p>
-                                <p>
-                                    <FontAwesomeIcon icon={["fas", "phone"]} />
-                                    <span> {this.props.event.mobile} </span>
-                                </p> <p>
-                               Longitude: &nbsp;
-                                <span> {this.props.event.coordinates.longitude}</span>
-                            </p>
-                                <p>
-                                    Latitude: &nbsp;
+
+                                <div className="coords">
+                                    <u>
+                                <smaller>
+                               Long: &nbsp;
+                                 {this.props.event.coordinates.longitude}
+                                </smaller> &nbsp;
+                                    <smaller>
+                                    Lat: &nbsp;
 
                                     <span> {this.props.event.coordinates.latitude} </span>
-                                </p>
+                                    </smaller>
+                                </u>
+                                </div>
                             </Fragment>
                         )}
 

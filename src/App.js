@@ -1,11 +1,12 @@
 
 //this component coordinates the logic of all the other components
 import React, {Component, Fragment} from 'react';
+//
 import Modal from 'react-responsive-modal';
 import Header from "./components/header/";
 import EventList from  "./components/eventList";
 import Event from "./components/event";
-import FilterControls from "./components/filterControls/";
+// import FilterControls from "./components/filterControls/";
 import './App.css';
 // import request from "superagent";
 import api from "./datastore/stubAPI";
@@ -35,7 +36,7 @@ class App extends Component {
         return (
 
             <Fragment>
-                {/*//modal implement to handle requests regarding markers */}
+                {/*//modal implemented to handle requests rfor customized markers */}
                 <Modal
                     open={!!this.state.event}
                     onClose={this.closeModal}
@@ -55,7 +56,7 @@ class App extends Component {
                 >
 
                 </Map>
-                <FilterControls onUserInput={this.handleChange} />
+                {/*<FilterControls onUserInput={this.handleChange} />*/}
                 <EventList events={this.state.events}
                            deleteHandler={this.deleteEvent}/>
 

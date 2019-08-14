@@ -7,7 +7,7 @@ export default class EventList extends Component {
         //iterates through event cards to display as a list
         const eventCards = this.props.events.map(e => (
             <Event
-                   // key={e.mobile}
+
                    key={e.id}
                    className="col-sm-3"
                    event={e}

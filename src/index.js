@@ -11,8 +11,11 @@ class Router extends Component {
     componentDidMount() {
         request.get(api).end((error, res) => {
             if (res) {
-                let {results: events} = JSON.parse(res.text);
-                api.initialize(events);
+               // let events = events;
+               //  //let {results: events}
+               //  // = JSON.parse(res.text)
+               //  ;
+               //  api.initialize(events);
                 this.setState({});
             } else {
                 console.log(error);

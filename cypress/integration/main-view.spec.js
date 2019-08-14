@@ -5,6 +5,6 @@ describe("Main View ", () => {
 
     it("loads the list of events", () => {
         cy.get(".badge").should("contain", 7);
-        cy.get(".card").should("have.length", 50);
+        cy.get(".card").should("have.length", 7);
     });
 });
