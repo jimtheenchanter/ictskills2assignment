@@ -8,11 +8,15 @@ Heroku:     https://djeventmanager.herokuapp.com
 
 ##Overview
 A map-based events management app where the user can save event locations and details
- which are linked to cards describing the event. Date, customer, venue name etc.
+ which are linked to cards describing the event. Customised markers popup
+ when clicked on revealing event data.
+
+ 
  > Features
     Multiple event markers on map. 
     Clicking markers displays event data to the console.
     Can edit or delete events
+    Tests available using Cypress
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ##Setup

@@ -30,7 +30,7 @@ smaller {
 .card-body  {
     word-break:break-word;
     /*width: 90%;*/
-    background-color: mintcream;
+    background-color: rgba(0,0,0,0);
 }
 
 .coords
