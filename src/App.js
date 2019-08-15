@@ -8,6 +8,7 @@ import EventList from  "./components/eventList";
 import Event from "./components/event";
 // import FilterControls from "./components/filterControls/";
 import './App.css';
+import Form from './components/eventForm/';
 // import request from "superagent";
 import api from "./datastore/stubAPI";
 import Map from "./components/map/";
@@ -16,6 +17,12 @@ require('dotenv').config();
 
 class App extends Component {
     state = { event: null, events: api.getAll() };
+
+    addEvent = (bridename, groomname, venue, date, mobile, email, picture, latitude, longitude) => {
+        api.add(bridename, groomname, venue, date, mobile, email, picture, latitude, longitude);
+        this.setState({});
+    };
+
 
     deleteEvent = (key) => {
         api.delete(key);
@@ -36,13 +43,15 @@ class App extends Component {
         return (
 
             <Fragment>
-                {/*//modal implemented to handle requests rfor customized markers */}
+
+                {/*//modal implemented to handle requests for customized marker popups */}
                 <Modal
                     open={!!this.state.event}
                     onClose={this.closeModal}
 
                     center
                 >
+
                     <Event event={this.state.event} />
                 </Modal>
                 <Header noEvents={this.state.events.length} />
@@ -56,6 +65,7 @@ class App extends Component {
                 >
 
                 </Map>
+                <Form handleAdd={this.addEvent} />
                 {/*<FilterControls onUserInput={this.handleChange} />*/}
                 <EventList events={this.state.events}
                            deleteHandler={this.deleteEvent}/>

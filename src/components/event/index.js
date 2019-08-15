@@ -133,13 +133,13 @@ class Event extends Component {
                                 <div className="coords">
                                     <u>
                                 <smaller>
-                               Long: &nbsp;
-                                 {this.props.event.coordinates.longitude}
+                               Lat: &nbsp;
+                                 {this.props.event.latitude}
                                 </smaller> &nbsp;
                                     <smaller>
-                                    Lat: &nbsp;
+                                    Long: &nbsp;
 
-                                    <span> {this.props.event.coordinates.latitude} </span>
+                                    <span> {this.props.event.longitude} </span>
                                     </smaller>
                                 </u>
                                 </div>

@@ -22,8 +22,10 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
                         <Marker
                             key={e.id}
                             position={{
-                                lat: parseFloat(e.coordinates.latitude),
-                                lng: parseFloat(e.coordinates.longitude)
+                                // lat: parseFloat(e.coordinates.latitude),
+                                // lng: parseFloat(e.coordinates.longitude)
+                                lat: parseFloat(e.latitude),
+                                lng: parseFloat(e.longitude)
                             }}
                             onClick={() => onMarkerClick(e.id)}
                             title={`${e.bridename} & ${e.groomname}, ${e.venue}`}
