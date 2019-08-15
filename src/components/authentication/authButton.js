@@ -4,19 +4,22 @@ import { withRouter } from "react-router-dom";
 
 const AuthButton = props => {
     const { history } = props;
-    return Authentication.isAuthenticated ? (
+    // return Authentication.isAuthenticated ? (
+    const profile = Authentication.getUser();
+    return profile ? (
         <Fragment>
-            {`${Authentication.username} `}
-            <button
+            <span className="username text-light">{profile.user}</span>
+            <button type="submit"
+                    className="btn btn-outline-light btn-sm"
                 onClick={() => {
                     Authentication.signout(() => history.push("/"));
                 }}
             >
-                Sign out
+                Sign Out
             </button>
         </Fragment>
     ) : (
-        <button
+        <button className="btn-link"
             onClick={() => {
                 history.push("/login");
             }}

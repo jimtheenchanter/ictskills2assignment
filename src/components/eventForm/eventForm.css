@@ -1,4 +1,21 @@
 .form {
     margin-top: 30px;
     padding: 10px;
+
 }
+
+.form-control {
+    font-size: small;
+}
+
+/*.icon {*/
+/*    display: inline-block;*/
+/*}*/
+
+.form-group {
+
+    /*width: 80%;*/
+    background-color: lightslategray;
+}
+
+

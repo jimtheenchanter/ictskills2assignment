@@ -14,23 +14,6 @@ class StubAPI {
                 picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564740843/happycouple1.jpg",
                 latitude: "54.8646",
                 longitude: "-7.3136"
-
-                // login: {
-                //     uuid: "c4168eac-84b8-46ea-b735-c9da9bfb97fd",
-                //     username: "bluefrog786",
-                //     password: "ingrid",
-                //     salt: "GtRFz4NE",
-                //     md5: "5c581c5748fc8c35bd7f16eac9efbb55",
-                //     sha1: "c3feb8887abed9ec1561b9aa2c9f58de21d1d3d9",
-                //     sha256: "684c478a98b43f1ef1703b35b8bbf61b27dbc93d52acd515e141e97e04447712"
-                // },
-                // dob: {
-                //     date: "1975-11-12T06:34:44Z",
-                //     age: 42
-                // }, registered: {
-                //     date: "2015-11-04T22:09:36Z",
-                //     age: 2
-                // },
             },
             {
                 id: 2,
@@ -172,7 +155,6 @@ class StubAPI {
     getAll() {
         return this.events;
     }
-
 
     add(bridename, groomname, venue, date, mobile, email, picture,  latitude, longitude,) {
         let id = 1;

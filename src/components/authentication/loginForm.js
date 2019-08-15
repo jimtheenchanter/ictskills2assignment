@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Authentication from "../../util/authentication";
 import { withRouter, Redirect } from "react-router-dom";
+import logo from "../../logo.svg";
+
+import './login.css';
 
 class Login extends Component {
     state = {
@@ -33,7 +36,13 @@ class Login extends Component {
         }
         return (
             <div className="row">
-                <div className="col-md-4 offset-3">
+                <div className="col-md-4 ">
+
+                    <img className="center-block" src={logo}  alt="logo" />
+
+                </div>
+                <div className="col-md-4 ">
+                    {/*check for correct username & password*/}
                     {Authentication.error === 401 ? <p>Invalid username/password</p> : <p></p>}
                     <form style={{ marginTop: "30px" }}>
                         <h3>Login</h3>

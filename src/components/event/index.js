@@ -4,7 +4,7 @@ import "../../fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import buttons from "../../config/buttonsConfig";
 import api from "../../datastore/stubAPI";
-import { Link } from "react-router-dom";
+
 
 class Event extends Component {
     state = {
@@ -68,9 +68,7 @@ class Event extends Component {
 
             <div className={this.props.className}>
                 <div className={`card  ${cardColor}`}>
-                    <Link
-                        to={`/events/${this.props.event.mobile}${this.props.event.email}`}
-                    >
+
                     <img
                         // className="profile"
                         className="card-img-top"
@@ -82,7 +80,7 @@ class Event extends Component {
                             <p className="card-text">{this.props.event.venue}</p>
 
                         </div>
-                    </Link>
+
 
                         {/*<h2 className="card-title ">*/}
                             <h2 className="card-header">
@@ -141,31 +139,15 @@ class Event extends Component {
                                     Coordinates:
                                 </div>
                                 <ul className="list-group list-group-flush">
-                                    <li className="list-group-item">Lat: {this.props.event.latitude}</li>
-                                    <li className="list-group-item">Long: {this.props.event.longitude}</li>
+                                    <ul className="list-group-item">Lat: {this.props.event.latitude}</ul>
+                                    <ul className="list-group-item">Long: {this.props.event.longitude}</ul>
 
                                 </ul>
 
-                               {/* <div className="coords">*/}
-                               {/*     <u>*/}
-                               {/* <smaller>*/}
-                               {/*Lat: &nbsp;*/}
-                               {/*  {this.props.event.latitude}*/}
-                               {/* </smaller> &nbsp;*/}
-                               {/*     <smaller>*/}
-                               {/*     Long: &nbsp;*/}
-
-                               {/*     <span> {this.props.event.longitude} </span>*/}
-                               {/*     </smaller>*/}
-                               {/* </u>*/}
-                               {/* </div>*/}
-                            </Fragment>
+                             </Fragment>
                         )}
 
                     </div>
-
-
-
 
 
 
@@ -177,14 +159,14 @@ class Event extends Component {
                         >
                             <button
                                 type="button"
-                                className={"btn w-100 " + activeButtons.leftButtonColor}
+                                className={"btn w-50 " + activeButtons.leftButtonColor}
                                 onClick={leftButtonHandler}
                             >
                                 {activeButtons.leftButtonVal}
                             </button>
                             <button
                                 type="button"
-                                className={"btn w-100 " + activeButtons.rightButtonColor}
+                                className={"btn w-50 " + activeButtons.rightButtonColor}
                                 onClick={rightButtonHandler}
                             >
                                 {activeButtons.rightButtonVal}

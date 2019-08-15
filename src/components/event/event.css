@@ -8,6 +8,12 @@ a {
 
 }
 
+ul {
+    color:darkslateblue;
+    font-size: small;
+}
+
+
 .card-img-top {
     max-width:200px;
     alignment: center;
@@ -33,16 +39,16 @@ smaller {
 
 
 .card-header  {
-   font-size: 2vw;
+   font-size: small;
+    font-weight: bold;
     padding-left: 2%;
     padding-right: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
 }
 
-.coords
-
-{
+.coords {
     background-color: lightgray;
     padding-left: 2px;
     padding-top: 0px;
@@ -52,7 +58,7 @@ smaller {
     width: 100%;
     margin-top: 10px;
     padding-top: 10px;
-    paddding-right: 0;
+    padding-right: 0;
     background-color: mintcream;
 }
 

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './eventForm.css';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faMapPin, faMale, faFemale, faHome, faEnvelope, faPhone, faCalendar, faImage} from "@fortawesome/free-solid-svg-icons";
+
 
 export default class Form extends Component {
     // The data entry fields of a web forms are always part of the containing component's state object.
@@ -25,21 +28,25 @@ export default class Form extends Component {
     render() {
         return (
             <form  className="form bg-dark text-light">
-                <h3>Add a new event</h3>
+                <h4>Add a new event  </h4>
+
                 <div className="form-group">
-                    <input type="text"
+                    <FontAwesomeIcon icon={faFemale} />
+                   <input type="text"
                         className="form-control"
                            placeholder="Bride's first name"
                            value={this.state.bridename}
                            onChange={ this.handleBridenameChange } />
                 </div>
                 <div className="form-group">
+                    <FontAwesomeIcon icon={faMale} />
                     <input type="text" className="form-control"
                            placeholder="Groom's first name"
                            value={this.state.groomname}
                            onChange={ this.handleGroomnameChange }/>
                 </div>
                 <div className="form-group">
+                    <FontAwesomeIcon icon={faHome} />
                     <input type="text"
                            className="form-control"
                            placeholder="Venue"
@@ -47,6 +54,7 @@ export default class Form extends Component {
                            onChange={ this.handleVenueChange }/>
                 </div>
                 <div className="form-group">
+                    <FontAwesomeIcon icon={faCalendar} />
                     <input type="text"
                            className="form-control"
                            placeholder="Date"
@@ -54,6 +62,7 @@ export default class Form extends Component {
                            onChange={ this.handleDateChange }/>
                 </div>
                 <div className="form-group">
+                    <FontAwesomeIcon icon={faPhone} />
                     <input type="text"
                            className="form-control"
                            placeholder="Mobile"
@@ -61,6 +70,7 @@ export default class Form extends Component {
                            onChange={ this.handleMobileChange }/>
                 </div>
                 <div className="form-group">
+                    <FontAwesomeIcon icon={faEnvelope} />
                     <input type="text"
                            className="form-control"
                            placeholder="Email"
@@ -68,25 +78,32 @@ export default class Form extends Component {
                            onChange={ this.handleEmailChange }/>
                 </div>
                 <div className="form-group">
+                    <FontAwesomeIcon icon={faImage} />
                     <input type="text"
                            className="form-control"
                            placeholder="Picture URL"
                            value={this.state.picture}
                            onChange={ this.handlePictureChange }/>
-                </div>
-                <div className="form-group">
-                    <input type="text"
+
+                    <div className="row">
+                        <div className="col">
+                            <FontAwesomeIcon icon={faMapPin} />
+                        <input type="text"
                            className="form-control"
                            placeholder="Latitude"
                            value={this.state.latitude}
                            onChange={ this.handleLatitudeChange }/>
-                </div>
-                <div className="form-group">
-                    <input type="text"
+                        </div>
+
+                        <div className="col">
+                            <FontAwesomeIcon icon={faMapPin} />
+                        <input type="text"
                            className="form-control"
                            placeholder="Longitude"
                            value={this.state.longitude}
                            onChange={ this.handleLongitudeChange }/>
+                        </div>
+                    </div>
                 </div>
 
                 <button type="submit" className="btn btn-primary"

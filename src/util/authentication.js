@@ -1,12 +1,8 @@
 import axios from "axios";
+import decode from "jwt-decode";
 //makes a HTTP POST request to mock authentication server
 class Authentication {
-    constructor() {
-        this.isAuthenticated = false
-        this.token = undefined
-        this.username = undefined
-        this.error = undefined
-    }
+
 
     authenticate(username, password, cb, errorcb) {
         axios
@@ -15,10 +11,9 @@ class Authentication {
                 password: password
             })
             .then(res => {
-                this.isAuthenticated = true;
-                this.token = res.data.token;
-                this.username = username;
-                this.error = undefined;
+
+                localStorage.setItem('authToken', res.data.token);
+
                 cb();
             })
             .catch(err => {
@@ -26,15 +21,21 @@ class Authentication {
                 errorcb();
             });
     }
+    getUser() {
+        //check if logged in member is present
+        const token = localStorage.getItem('authToken');
 
+        if (!token) {
+            return;
+        }
+
+        return decode(token);
+    }
     signout(cb) {
-        this.isAuthenticated = false;
-        this.username = undefined;
-        this.tolen = undefined;
-        this.error = undefined;
+
+        localStorage.removeItem('authToken');
         cb();
     }
-
 }
 
 export default new Authentication();
