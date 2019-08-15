@@ -8,6 +8,10 @@ a {
 
 }
 
+.card-img-top {
+    max-width:200px;
+    alignment: center;
+}
 
 smaller {
     font-size: .6em;
@@ -27,10 +31,13 @@ smaller {
     padding-right: 0;
 }
 
-.card-body  {
-    word-break:break-word;
-    /*width: 90%;*/
-    background-color: rgba(0,0,0,0);
+
+.card-header  {
+   font-size: 2vw;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .coords
@@ -42,6 +49,7 @@ smaller {
 }
 
 .card {
+    width: 100%;
     margin-top: 10px;
     padding-top: 10px;
     paddding-right: 0;

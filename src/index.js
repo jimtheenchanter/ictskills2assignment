@@ -12,11 +12,7 @@ class Router extends Component {
     componentDidMount() {
         request.get(api).end((error, res) => {
             if (res) {
-               // let events = events;
-               //  //let {results: events}
-               //  // = JSON.parse(res.text)
-               //  ;
-               //  api.initialize(events);
+
                 this.setState({});
             } else {
                 console.log(error);
@@ -26,20 +22,20 @@ class Router extends Component {
 
 
     render() {
-        return (
-            <BrowserRouter>
-                <div className="jumbotron">
-                    <div className="container-fluid ">
-                        <Switch>
-                            <Route path="/login" component={LoginForm} />
-                            <Route path="/events/:id" component={EventPage} />
-                            <Route exact path="/" component={App} />
-                            <Redirect from="*" to="/" />
-                        </Switch>
+            return (
+                <BrowserRouter>
+                    <div className="jumbotron">
+                        <div className="container-fluid ">
+                            <Switch>
+                                <Route path="/login" component={LoginForm} />
+                                <Route path="/events/:id" component={EventPage} />
+                                <Route exact path="/" component={App} />
+                                <Redirect from="*" to="/" />
+                            </Switch>
+                        </div>
                     </div>
-                </div>
-            </BrowserRouter>
-        );
+                </BrowserRouter>
+            );
     }
 }
 

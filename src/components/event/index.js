@@ -72,28 +72,35 @@ class Event extends Component {
                         to={`/events/${this.props.event.mobile}${this.props.event.email}`}
                     >
                     <img
-                        className="profile"
+                        // className="profile"
+                        className="card-img-top"
                         alt={this.props.event.venue}
                         src={this.props.event.picture}
                     />
-                    </Link>
-                    <div className="card-body">
+                        <div className="card-img-overlay">
+                            <h5 className="card-title">{this.props.event.date}</h5>
+                            <p className="card-text">{this.props.event.venue}</p>
 
-                        <h2 className="card-title ">
+                        </div>
+                    </Link>
+
+                        {/*<h2 className="card-title ">*/}
+                            <h2 className="card-header">
 
                             {`${this.props.event.bridename} + ${
                                 this.props.event.groomname
                                 }`}
                         </h2>
+                    <div className="card-body">
                         <p>
                             <address>
                                 <a href="mailto:#">
                                     <FontAwesomeIcon icon={["fas", "envelope"]}/>
                                     <span> {this.props.event.email}</span>
                                 </a>
-                                <address>
-                                </address>
 
+                                </address>
+                                <address>
                                 <FontAwesomeIcon icon={["fas", "phone"]} />
                                 <span> {this.props.event.mobile} </span>
                             </address>
@@ -130,19 +137,28 @@ class Event extends Component {
                             (
                             <Fragment>
 
-                                <div className="coords">
-                                    <u>
-                                <smaller>
-                               Lat: &nbsp;
-                                 {this.props.event.latitude}
-                                </smaller> &nbsp;
-                                    <smaller>
-                                    Long: &nbsp;
-
-                                    <span> {this.props.event.longitude} </span>
-                                    </smaller>
-                                </u>
+                                <div className="card-header">
+                                    Coordinates:
                                 </div>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">Lat: {this.props.event.latitude}</li>
+                                    <li className="list-group-item">Long: {this.props.event.longitude}</li>
+
+                                </ul>
+
+                               {/* <div className="coords">*/}
+                               {/*     <u>*/}
+                               {/* <smaller>*/}
+                               {/*Lat: &nbsp;*/}
+                               {/*  {this.props.event.latitude}*/}
+                               {/* </smaller> &nbsp;*/}
+                               {/*     <smaller>*/}
+                               {/*     Long: &nbsp;*/}
+
+                               {/*     <span> {this.props.event.longitude} </span>*/}
+                               {/*     </smaller>*/}
+                               {/* </u>*/}
+                               {/* </div>*/}
                             </Fragment>
                         )}
 
