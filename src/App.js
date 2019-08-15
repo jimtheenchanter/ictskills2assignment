@@ -1,7 +1,7 @@
 
 //this component coordinates the logic of all the other components
 import React, {Component, Fragment} from 'react';
-//
+// implement Modal to handle mouse event and customise callbacks
 import Modal from 'react-responsive-modal';
 import Header from "./components/header/";
 import EventList from  "./components/eventList";
@@ -33,7 +33,6 @@ class App extends Component {
         this.setState({ event });
     };
 
-
     closeModal = () => {
         this.setState({ event: null });
     }
@@ -43,12 +42,10 @@ class App extends Component {
         return (
 
             <Fragment>
-
                 {/*//modal implemented to handle requests for customized marker popups */}
                 <Modal
                     open={!!this.state.event}
                     onClose={this.closeModal}
-
                     center
                 >
 

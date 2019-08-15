@@ -6,6 +6,7 @@ import api from "./datastore/stubAPI"; // NEW
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import App from "./App";
 import EventPage from "./components/eventPage";
+import LoginForm from "./components/authentication/loginForm";
 
 class Router extends Component {
     componentDidMount() {
@@ -30,6 +31,7 @@ class Router extends Component {
                 <div className="jumbotron">
                     <div className="container-fluid ">
                         <Switch>
+                            <Route path="/login" component={LoginForm} />
                             <Route path="/events/:id" component={EventPage} />
                             <Route exact path="/" component={App} />
                             <Redirect from="*" to="/" />
