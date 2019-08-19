@@ -4,7 +4,7 @@ import "../../fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import buttons from "../../config/buttonsConfig";
 import api from "../../datastore/stubAPI";
-
+import { Link } from "react-router-dom";
 
 class Event extends Component {
     state = {
@@ -54,7 +54,7 @@ class Event extends Component {
         let rightButtonHandler = this.handleDelete;
         let cardColor = "bg-white";
         if (this.state.status === "edit") {
-            cardColor = "bg-primary";
+            cardColor = "bg-gray";
             activeButtons = buttons.edit;
             leftButtonHandler = this.handleSave;
             rightButtonHandler = this.handleCancel;
@@ -66,53 +66,41 @@ class Event extends Component {
         }
         return (
 
+
+
+            <div className="col-sm-3">
             <div className={this.props.className}>
-                <div className={`card  ${cardColor}`}>
-
-                    <img
-                        // className="profile"
-                        className="card-img-top"
-                        alt={this.props.event.venue}
-                        src={this.props.event.picture}
-                    />
-                        <div className="card-img-overlay">
-                            <h5 className="card-title">{this.props.event.date}</h5>
-                            <p className="card-text">{this.props.event.venue}</p>
-
-                        </div>
-
-
-                        {/*<h2 className="card-title ">*/}
-                            <h2 className="card-header">
-
-                            {`${this.props.event.bridename} + ${
-                                this.props.event.groomname
-                                }`}
-                        </h2>
-                    <div className="card-body">
-                        <p>
-                            <address>
-                                <a href="mailto:#">
-                                    <FontAwesomeIcon icon={["fas", "envelope"]}/>
-                                    <span> {this.props.event.email}</span>
-                                </a>
-
-                                </address>
-                                <address>
-                                <FontAwesomeIcon icon={["fas", "phone"]} />
-                                <span> {this.props.event.mobile} </span>
-                            </address>
-                        </p>
-                        <h4 className="date-name ">
-                            {`${this.props.event.date} `}
-
-                        </h4>
-                        <h5 className="venue-name ">
-                            {`${this.props.event.venue} `}
-
+                <div className={`card ${cardColor}`} >
+            <div className="card">
+                    <img src={this.props.event.picture} className="card-img-top" alt="{this.props.event.bridename} {this.props.event.groomname}"/>
+                    {/*<div className="card-img-overlay">*/}
+                        <h5 className="card-text">
+                            <span className="badge badge-secondary"> {this.props.event.date}</span>
                         </h5>
+                    {/*</div>*/}
+                        <div className="card-body">
+                            <h5 className="card-title">{this.props.event.bridename} & {this.props.event.groomname}</h5>
+                <hr/>
+                            <h6 className="card-subtitle">{this.props.event.venue} </h6>
 
-                        {this.state.status === "edit" ? (
+                                <small className="text-muted">Lat: {this.props.event.latitude} <br/>
+                                Long: {this.props.event.longitude}</small>
+
+                <hr/>
+
+                            <h6>First Dance: </h6>  <Link className={"youtube"}
+                                to={this.props.event.firstdance}
+                            >{this.props.event.firstdance}</Link>
+                           <ul className="list-group list-group-flush">
+                            <li className="list-group-item"><strong>Start Time: </strong> {this.props.event.starttime}</li>
+                            <li className="list-group-item"><strong>Finish Time: </strong> {this.props.event.finishtime} </li>
+                        </ul>
+
+
+
+
+
+                    {this.state.status === "edit" ? (
                             <Fragment>
                                 <p>
                                     <input
@@ -131,56 +119,51 @@ class Event extends Component {
                                     />
                                 </p>
                             </Fragment>
-                        ) :
-                            (
+                        )                       :
+                        (
                             <Fragment>
 
                                 <div className="card-header">
-                                    Coordinates:
+                                    Contact:
                                 </div>
                                 <ul className="list-group list-group-flush">
-                                    <ul className="list-group-item">Lat: {this.props.event.latitude}</ul>
-                                    <ul className="list-group-item">Long: {this.props.event.longitude}</ul>
+                                    <ul className="list-group-item"> <FontAwesomeIcon icon={["fas", "envelope"]} />&nbsp;{this.props.event.email}</ul>
+                                    <ul className="list-group-item">    <FontAwesomeIcon icon={["fas", "phone"]} />&nbsp; {this.props.event.mobile}</ul>
 
                                 </ul>
 
-                             </Fragment>
+                            </Fragment>
                         )}
-
-                    </div>
-
+                </div>
 
 
-                    <div className="card-footer">
-                        <div
-                            className="btn-group d-flex btn-group-justified"
-                            role="group"
-                            aria-label="..."
+
+                <div className="card-footer">
+                    <div
+                        className="btn-group d-flex btn-group-justified"
+                        role="group"
+                        aria-label="..."
+                    >
+                        <button
+                            type="button"
+                            className={"btn w-50 " + activeButtons.leftButtonColor}
+                            onClick={leftButtonHandler}
                         >
-                            <button
-                                type="button"
-                                className={"btn w-50 " + activeButtons.leftButtonColor}
-                                onClick={leftButtonHandler}
-                            >
-                                {activeButtons.leftButtonVal}
-                            </button>
-                            <button
-                                type="button"
-                                className={"btn w-50 " + activeButtons.rightButtonColor}
-                                onClick={rightButtonHandler}
-                            >
-                                {activeButtons.rightButtonVal}
-                            </button>
-                        </div>
+                            {activeButtons.leftButtonVal}
+                        </button>
+                        <button
+                            type="button"
+                            className={"btn w-50 " + activeButtons.rightButtonColor}
+                            onClick={rightButtonHandler}
+                        >
+                            {activeButtons.rightButtonVal}
+                        </button>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
+            </div>
+            </div>
+          </div>
         );
     }
 }

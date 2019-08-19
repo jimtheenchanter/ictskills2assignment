@@ -2,7 +2,7 @@
 
 import { MemoryRouter, Route } from "react-router";
 import React from 'react';
-// import { MemoryRouter, Route } from "react-router";
+
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -45,40 +45,40 @@ const sample = {
     },
 };
 
-// const sample1 =  {id: 2,
-//     bridename: "Steffi",
-//     groomname: "Brian",
-//     venue: "Dromquinna Manor",
-//     date: "2018-08-09",
-//     mobile: "+3538695485912",
-//     email: "steffibrian@hotmail.org",
-//     picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple3.jpg",
-//     coordinates: {
-//         latitude: "51.871379",
-//         longitude: "-9.643672"
-//     }
-// };
-//
-// const sample2 = {
-//     id: 3,
-//     bridename: "Naile",
-//     groomname: "James",
-//     venue: "Hay Barn",
-//     date: "2018-08-17",
-//     mobile: "+3538695485912",
-//     email: "katieandivan@hotmail.org",
-//     picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple2.jpg",
-//     coordinates: {
-//         latitude: "53.264203",
-//         longitude: "-7.518304"
-//     }
-// };
+const sample1 =  {id: 2,
+    bridename: "Steffi",
+    groomname: "Brian",
+    venue: "Dromquinna Manor",
+    date: "2018-08-09",
+    mobile: "+3538695485912",
+    email: "steffibrian@hotmail.org",
+    picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple3.jpg",
+    coordinates: {
+        latitude: "51.871379",
+        longitude: "-9.643672"
+    }
+};
+
+const sample2 = {
+    id: 3,
+    bridename: "Naile",
+    groomname: "James",
+    venue: "Hay Barn",
+    date: "2018-08-17",
+    mobile: "+3538695485912",
+    email: "katieandivan@hotmail.org",
+    picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple2.jpg",
+    coordinates: {
+        latitude: "53.264203",
+        longitude: "-7.518304"
+    }
+};
 
 
 
 
 storiesOf("Event List App/Header", module).add("default", () => (
-    <Header noEvents={5} />
+    <Header noEvents={4} />
 ));
 
 storiesOf("Event List App/Filter Controls", module).add("default", () => (

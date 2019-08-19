@@ -1,41 +1,68 @@
-address {
-    font-size: .5em;
+div {
+    max-width: 100%;
+    margin:auto;
+    padding: 0;
+}
+
+.styles_overlay__CLSq- {
+    width: auto;
+    margin: auto;
+}
+
+.card {
+    /*margin-right: 0;*/
+    /*max-width: inherit;*/
+    padding-top: 10px;
+    background-color: mintcream;
+}
+
+.card-body {
+    padding-right: 0;
+    padding-left: .5em;
+}
+
+.card-img-top {
+    /*max-width:200px;*/
+    alignment: center;
 }
 
 a {
     width: 100%;
     padding: 0;
+}
 
+hr {
+    margin-right: 2em;
+    margin-top: .5em;
+    margin-bottom: 2em;
 }
 
 ul {
     color:darkslateblue;
     font-size: small;
+    margin-bottom: 20px;
 }
 
-
-.card-img-top {
-    max-width:200px;
-    alignment: center;
-}
-
-smaller {
+.youtube {
     font-size: .6em;
-    padding-left: .5em;
+    color: lightblue;
 }
 
+li {
+    color: gray;
+}
 
 .row {
     width: 100%;
 }
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    padding-right: 0;
-}
+/*.center {*/
+/*    display: block;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    width: 40%;*/
+/*    padding-right: 0;*/
+/*}*/
 
 
 .card-header  {
@@ -45,7 +72,7 @@ smaller {
     padding-right: 2%;
     margin-left: 0;
     margin-right: 0;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .coords {
@@ -54,16 +81,37 @@ smaller {
     padding-top: 0px;
 }
 
-.card {
-    width: 100%;
-    margin-top: 10px;
-    padding-top: 10px;
-    padding-right: 0;
-    background-color: mintcream;
+
+
+.card-title {
+    font-max-size: medium;
 }
 
 .profile {
     width:150px;
     margin:10px;
     alignment: center;
+}
+
+/* p .card-text {*/
+/*    margin-bottom: .4em;*/
+/*}*/
+
+.form-control
+{
+    margin-top:10px;
+}
+
+.col-sm-3 {
+    max-width:250px;
+    min-width:200px;
+    margin: 5px 5px 5px 5px;
+    /*padding-right: 0;*/
+    /*margin-right:33%;*/
+    /*margin-left:33%;*/
+}
+.styles_modal__gNwvD {
+    max-width:250px;
+    margin: auto;
+    padding: auto;
 }

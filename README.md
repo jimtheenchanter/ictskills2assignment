@@ -14,32 +14,66 @@ A map-based events management app where the user can save event locations and de
  when clicked on revealing event data.
 
  
- > Features
+ > FEATURES
     Multiple event markers on map. 
-    Clicking markers displays event data to the console.
-    Can edit or delete events
+    Clicking markers displays information popups.
+    Can edit contact details or delete events 
     Tests available using Cypress
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ##Setup
-Git clone from 
+
+IMPORTANT: This project uses locally hosted JWT server 
+which must first run. 
+
+
+Git MoctJWT clone from 
+git clone `https://github.com/alex-c/mock-auth-backend`
+In mockJwt/mock-auth-backend/config/defaults.json, change the line:
+
+"cors-origin": "http://localhost:8080",
+to
+"cors-origin": "*",
+
+Then from the console enter 
+`node index.js`
+this starts the JWT access token server
+
+
+Project from
 ####https://github.com/jimtheenchanter/ictskills2assignment.git
 
 From console enter:
 ### `npm install`
 ### `npm start`
 
-NB: For authentication and logon please initalise mockJWT from
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+##Testing
+Cypress testing enabled for 
+
+<ul>
+<li>Number of events
+
+<li>Edit / Delete fuction
+
+<li>Card Color
+
+From a new console window enter 
+`npx cypress open` 
+
+##Storybook Mode
+ ### `npx start-storybook -p 9001 -c .storybook`
+ Open [http://localhost:9001/](http://localhost:9001)
+ 
 
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-or for <strong>Storybook mode </strong> enter:
-### `npx start-storybook -p 9001 -c .storybook`
-Open [http://localhost:9001/](http://localhost:9001)
-You will also see any lint errors(!) in the console.
-
+##Bugs
+JSON server was included but disabled as not fully functional.
+json-server db.json -p 3001
 
 The page will reload if you make edits.<br>
 ### `npm test`

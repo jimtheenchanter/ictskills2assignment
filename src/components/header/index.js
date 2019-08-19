@@ -11,8 +11,6 @@ class Header extends Component {
 
                 <nav className="navbar  navbar-light fixed-top   ">
 
-
-
                     <div className={"App-logo"}>
                         <img src={logo} className="App-logo" alt="logo" />
                     </div>
@@ -20,14 +18,12 @@ class Header extends Component {
                     <ul className="navbar-nav">
                         <li className="nav-item">
                            Welcome, <AuthButton />
-
                         </li>
                       <li> You have  <span className="badge badge-pill badge-success">{this.props.noEvents}</span> events registered.
                       </li>
                     </ul>
                 </nav>
             </div>
-
 
         );
     }

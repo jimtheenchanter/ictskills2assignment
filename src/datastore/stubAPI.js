@@ -13,7 +13,10 @@ class StubAPI {
                 email: "katieandivan@hotmail.org",
                 picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564740843/happycouple1.jpg",
                 latitude: "54.8646",
-                longitude: "-7.3136"
+                longitude: "-7.3136",
+                firstdance: "https://www.youtube.com/watch?v=MmyDosjjP5U",
+                starttime:  "21:30",
+                finishtime: "02:00"
             },
             {
                 id: 2,
@@ -21,42 +24,47 @@ class StubAPI {
                 groomname: "Brian",
                 venue: "Dromquinna Manor",
                 date: "2018-08-09",
-                month: "august",
                 mobile: "+3538695485914",
-                email: "katieandivan@hotmail.org",
-                picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple3.jpg",
+                email: "ksteffibrian@hotmail.org",
+                picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1565949158/happycouple8.jpg",
                 latitude: "51.871379",
-                longitude: "-9.643672"
+                longitude: "-9.643672",
+                firstdance: "https://www.youtube.com/watch?v=MmyDosjjP5U",
+                starttime:  "21:30",
+                finishtime: "02:00"
 
             },
 
             {
                 id: 3,
-                bridename: "Steffi",
-                groomname: "Brian",
-                venue: "Dromquinna Manor",
-                date: "2018-08-09",
-                month: "august",
+                bridename: "Naile",
+                groomname: "James",
+                venue: "Family Barn",
+                date: "2018-08-17",
                 mobile: "+3538695485914",
-                email: "katieandivan@hotmail.org",
+                email: "nailjames@hotmail.org",
                 picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple3.jpg",
-
-                        latitude: "53.270350",
-                        longitude: "-7.430745"
+                latitude: "53.270350",
+                longitude: "-7.430745",
+                firstdance: "https://www.youtube.com/watch?v=MmyDosjjP5U",
+                starttime:  "21:30",
+                finishtime: "02:00"
 
             },
             {
                 id: 4,
-                bridename: "Steffi",
-                groomname: "Brian",
-                venue: "Dromquinna Manor",
-                date: "2018-08-09",
-                month: "august",
+                bridename: "Aoibheann",
+                groomname: "Jimmy",
+                venue: "Fallon & Byrne",
+                date: "2018-08-23",
                 mobile: "+3538695485914",
-                email: "katieandivan@hotmail.org",
-                picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1564741195/happycouple3.jpg",
+                email: "aoibheannJimmy@hotmail.org",
+                picture: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1565949158/happycouple10.jpg",
                 latitude: "52.925765",
-                longitude: "-8.180390"
+                longitude: "-8.180390",
+                firstdance: "https://www.youtube.com/watch?v=MmyDosjjP5U",
+                starttime:  "21:30",
+                finishtime: "02:00"
 
             }
             // {
@@ -86,7 +94,8 @@ class StubAPI {
             //         latitude: "53.322786",
             //         longitude: "-6.264836"
             //     }
-            // },
+            // }
+            // ,
             // {
             //     id: 5,
             //     bridename: "Clare",
@@ -156,7 +165,7 @@ class StubAPI {
         return this.events;
     }
 
-    add(bridename, groomname, venue, date, mobile, email, picture,  latitude, longitude,) {
+    add(bridename, groomname, venue, date, mobile, email, picture,  latitude, longitude, firstdance, starttime, finishtime) {
         let id = 1;
         let last = _.last(this.events);
         if (last) {
@@ -173,7 +182,10 @@ class StubAPI {
             email,
             picture,
             latitude,
-            longitude
+            longitude,
+            firstdance,
+            starttime,
+            finishtime
         });
         return newLen > len;
     }

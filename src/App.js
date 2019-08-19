@@ -17,8 +17,8 @@ require('dotenv').config();
 class App extends Component {
     state = { event: null, events: api.getAll() };
 
-    addEvent = (bridename, groomname, venue, date, mobile, email, picture, latitude, longitude) => {
-        api.add(bridename, groomname, venue, date, mobile, email, picture, latitude, longitude);
+    addEvent = (bridename, groomname, venue, date, mobile, email, picture, latitude, longitude, firstdance, starttime, finishtime) => {
+        api.add(bridename, groomname, venue, date, mobile, email, picture, latitude, longitude, firstdance, starttime, finishtime);
         this.setState({});
     };
 
@@ -43,25 +43,37 @@ class App extends Component {
 
 
          return <div className="container-fluid">
-             <div className="row">
+
 
                  <Fragment>
+                     <div className="row">
                      <div className="col">
                          {/*return multiple elements*/}
-
-
-                             <p className="lead">Keep track of the Who, Where & When of your events.
+                          <p className="lead">Keep track of the Who, Where & When of your events.
                              Click on a marker for info or add a new event below.</p>
 
-                             <Form handleAdd={this.addEvent}/>
+                             {/*<Form handleAdd={this.addEvent}/>*/}
                              {/*//modal implemented to handle requests for customized marker popups */}
-                         </div>
+                     </div>
                          <div className="col">
+                             <p>
+                                 &nbsp;
+                             </p>
+                         </div>
+                     </div>
+                     <div className="row">
+                         <div className="col">
+                             {/*place form for adding event*/}
+                             <Form handleAdd={this.addEvent}/>
+                         </div>
+                        <div className="col">
+                             {/*point to modal function for creating popups*/}
                              <Modal
                                  open={!!this.state.event}
                                  onClose={this.closeModal}
                                  center
                              >
+                                 {/*use the data from events*/}
                                  <Event event={this.state.event}/>
                              </Modal>
                              <Header noEvents={this.state.events.length}/>
@@ -73,14 +85,17 @@ class App extends Component {
                                  mapElement={<div style={{height: `80%`}}/>}
                                  openModal={this.openModal}
                              >
-
                              </Map>
-                         </div>
+
+                        </div> </div>
+                     <div className="row">
+                         <div className="col">
                          <EventList events={this.state.events}
                                     deleteHandler={this.deleteEvent}/>
+                         </div>
+                     </div>
+                     </Fragment>
 
-                 </Fragment>
-             </div>
              </div>
 
 
