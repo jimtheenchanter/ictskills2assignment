@@ -1,11 +1,15 @@
-<img src="https://res.cloudinary.com/jimtheenchanter/image/upload/v1564740843/happycouple1.jpg">
+<img src="https://res.cloudinary.com/jimtheenchanter/image/upload/v1566239036/splash.jpg">
 
 #ICT Skills 2 Assignment  -Single Page App
 
-Name        James O'Brien
+Name        James O'Brien 
 Student no. 20082197    
-Git repo    https://github.com/jimtheenchanter/ictskills2assignment.git
-Heroku:     https://djeventmanager.herokuapp.com
+[Git repo]  <br/>  https://github.com/jimtheenchanter/ictskills2assignment.git
+
+[Heroku]  <br/> https://djeventmanager.herokuapp.com
+
+<br/>
+<strong>Mock JWT server must be running first </strong>
 
 
 ##Overview

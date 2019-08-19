@@ -1,15 +1,24 @@
 .form {
+    padding: 10px;
+    background-color: lightslategray;
+    margin: 0;
+
+}
+
+form .form .text-light {
 
     padding: 10px;
     background-color: lightslategray;
-    margin-bottom: 20px;
+/*    margin-bottom: 20px;*/
+/*    margin-top: 0;*/
+/*    border:2px;*/
 }
 
 .input {
     padding-bottom: 3px;
     margin-right: 0;
     margin-bottom: 3px;
-;
+
 }
 
 .form-control {

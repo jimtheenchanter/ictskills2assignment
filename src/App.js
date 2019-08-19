@@ -15,7 +15,12 @@ require('dotenv').config();
 
 
 class App extends Component {
-    state = { event: null, events: api.getAll() };
+    state = { event: null, events: api.getAll(), search: "", month: "all" };
+    handleChange = (type, value) => {
+        type === "name"
+            ? this.setState({ search: value })
+            : this.setState({ month: value });
+    };
 
     addEvent = (bridename, groomname, venue, date, mobile, email, picture, latitude, longitude, firstdance, starttime, finishtime) => {
         api.add(bridename, groomname, venue, date, mobile, email, picture, latitude, longitude, firstdance, starttime, finishtime);
@@ -52,13 +57,10 @@ class App extends Component {
                           <p className="lead">Keep track of the Who, Where & When of your events.
                              Click on a marker for info or add a new event below.</p>
 
-                             {/*<Form handleAdd={this.addEvent}/>*/}
-                             {/*//modal implemented to handle requests for customized marker popups */}
+
                      </div>
                          <div className="col">
-                             <p>
-                                 &nbsp;
-                             </p>
+
                          </div>
                      </div>
                      <div className="row">
@@ -87,9 +89,11 @@ class App extends Component {
                              >
                              </Map>
 
-                        </div> </div>
+                        </div>
+                     </div>
                      <div className="row">
                          <div className="col">
+
                          <EventList events={this.state.events}
                                     deleteHandler={this.deleteEvent}/>
                          </div>

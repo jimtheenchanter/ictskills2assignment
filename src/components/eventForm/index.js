@@ -41,17 +41,16 @@ export default class Form extends Component {
                                 <div className="caption">Eg: Jane </div></div>
                             <input type="text"
                                className="form-control"
-                               placeholder="Bride's first name"
+                               placeholder="Bride's name"
                                value={this.state.bridename}
                                onChange={ this.handleBridenameChange } />
-
                         </div>
 
                         <div className="col">
                             <div className="formlabel"> <FontAwesomeIcon icon={faMale} />
                                 <div className="caption">Eg: John</div></div>
                                  <input type="text" className="form-control"
-                                        placeholder="Groom's first name"
+                                        placeholder="Groom's name"
                                         value={this.state.groomname}
                                         onChange={ this.handleGroomnameChange }/>
                         </div>
@@ -90,7 +89,6 @@ export default class Form extends Component {
                            onChange={ this.handleMobileChange }/>
                 </div>
                 <div className="form-group">
-
                     <div className="formlabel"> <FontAwesomeIcon icon={faEnvelope} />
                         <div className="caption">Eg: janeandjohn@lovemail.org </div></div>
                     <input type="text"
@@ -124,7 +122,9 @@ export default class Form extends Component {
                     <div className="row">
                         <div className="col">
                             <div className="formlabel"> <FontAwesomeIcon icon={faMapPin} />
-                                <div className="caption">Eg: 52.7646 </div></div>
+                                <div className="caption">Eg: 52.7646
+                                </div>
+                            </div>
                         <input type="text"
                            className="form-control"
                            placeholder="Latitude"
