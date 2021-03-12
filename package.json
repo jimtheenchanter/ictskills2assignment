@@ -55,6 +55,6 @@
     "@storybook/addon-actions": "^5.1.10",
     "@storybook/react": "^5.1.10",
     "gh-pages": "^2.0.1",
-    "react-dev-utils": "^9.0.1"
+    "react-dev-utils": "^11.0.4"
   }
 }
